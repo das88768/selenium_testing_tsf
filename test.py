@@ -217,32 +217,64 @@ class TheSparksFoundation(unittest.TestCase):
 
     #     assert True
 
-    # Test the Visit Now button in the home page.
-    def test_13_VisitNow_btn(self):
-        # Scroll down to the visit Now button in the home page.
-        self.driver.execute_script("window.scrollTo(0, 1500)")
-        time.sleep(3)
+    # # Test the Visit Now button in the home page.
+    # def test_13_VisitNow_btn(self):
+    #     # Scroll down to the visit Now button in the home page.
+    #     self.driver.execute_script("window.scrollTo(0, 1500)")
+    #     time.sleep(3)
         
-        # Fetch the url from the visit now button.
-        visit_now_url = self.driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/a').get_attribute('href')
-        time.sleep(2)
+    #     # Fetch the url from the visit now button.
+    #     visit_now_url = self.driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/a').get_attribute('href')
+    #     time.sleep(2)
 
-        # Open a new tab
-        self.driver.execute_script("window.open('');")
+    #     # Open a new tab
+    #     self.driver.execute_script("window.open('');")
   
-        # Switch to the new tab and open the new URL
-        self.driver.switch_to.window(self.driver.window_handles[1])
-        self.driver.get(visit_now_url)
-        time.sleep(5)
+    #     # Switch to the new tab and open the new URL
+    #     self.driver.switch_to.window(self.driver.window_handles[1])
+    #     self.driver.get(visit_now_url)
+    #     time.sleep(5)
 
-        # Close the new tab.
-        self.driver.close()
+    #     # Close the new tab.
+    #     self.driver.close()
 
-        # again switch to the main tab.
-        self.driver.switch_to.window(self.driver.window_handles[0])
+    #     # again switch to the main tab.
+    #     self.driver.switch_to.window(self.driver.window_handles[0])
+    #     time.sleep(2)
+
+    #     assert True
+
+
+    def test_14_Explore_btn(self):
+        # Scroll down the web page to a specified height.
+        self.driver.execute_script("window.scrollTo(0, 2000)")
         time.sleep(2)
 
-        assert True
+        # Store the elements of the explore buttons.
+        items = self.driver.find_elements(By.CLASS_NAME, 'owl-item')
+
+        # Loops through the Corporate partner's Explore buttons.
+        for item in items:
+            new_url = item.find_element(By.TAG_NAME, 'a').get_attribute('href')
+
+            # Open a new tab
+            self.driver.execute_script("window.open('');")
+    
+            # Switch to the new tab and open the new URL
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            self.driver.get(new_url)
+            time.sleep(5)
+
+            # Close the new tab.
+            self.driver.close()
+
+            # again switch to the main tab.
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(2)
+
+        assert True    
+
+
 
     def tearDown(self):
         self.driver.close()
