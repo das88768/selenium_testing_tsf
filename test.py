@@ -17,25 +17,25 @@ class TheSparksFoundation(unittest.TestCase):
 
 
     # Test the Title of the website.
-    def test_1_verify_title(self):
+    def test_01_verify_title(self):
         self.driver.find_element(By.XPATH, '//*[@id="home"]/div/div[1]/h1/a').click()
         assert True
 
 
     # Test the Logo the website.
-    def test_2_verify_logo(self):
+    def test_02_verify_logo(self):
         self.driver.find_element(By.CLASS_NAME, 'navbar-brand')
         assert True
 
 
     # Test the NavBar of the website.
-    def test_3_verify_navbar(self):
+    def test_03_verify_navbar(self):
         self.driver.find_element(By.XPATH, '//*[@id="home"]/div/div[1]')
         assert True
 
 
     # Test to Verify About Us page.
-    def test_4_verify_AboutUs_page(self):
+    def test_04_verify_AboutUs_page(self):
         self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[1]/a').click()
         time.sleep(2)
 
@@ -60,7 +60,7 @@ class TheSparksFoundation(unittest.TestCase):
 
 
     # Test to verify Policies and Code page.
-    def test_5_verify_Policies_and_Code_page(self):
+    def test_05_verify_Policies_and_Code_page(self):
         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/a').click()
         time.sleep(2)
 
@@ -85,7 +85,7 @@ class TheSparksFoundation(unittest.TestCase):
 
 
     # Test to verify Programs page.
-    def test_6_verify_Programs_page(self):
+    def test_06_verify_Programs_page(self):
         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/a').click()
         time.sleep(2)
 
@@ -110,7 +110,7 @@ class TheSparksFoundation(unittest.TestCase):
 
 
     # Test to verify Links page.
-    def test_7_verify_Links_page(self):
+    def test_07_verify_Links_page(self):
         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/a').click()
         time.sleep(2)
 
@@ -135,7 +135,7 @@ class TheSparksFoundation(unittest.TestCase):
     
 
     # Test to verify Join Us page.
-    def test_8_verify_JoinUs_page(self):
+    def test_08_verify_JoinUs_page(self):
         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/a').click()
         time.sleep(2)
 
@@ -160,7 +160,7 @@ class TheSparksFoundation(unittest.TestCase):
 
 
     # Test to verify Contact Us page.
-    def test_9_verify_ContactUs_page(self):
+    def test_09_verify_ContactUs_page(self):
         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[6]/a').click()
         time.sleep(3)
 
