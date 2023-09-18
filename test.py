@@ -1,12 +1,8 @@
-import os
 import unittest
 import time
-import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.firefox.options import Options   
-from selenium.webdriver.support.select import Select  
-from selenium.common.exceptions import NoSuchElementException 
+from selenium.webdriver.support.select import Select
 
 
 class TheSparksFoundation(unittest.TestCase):
@@ -19,260 +15,271 @@ class TheSparksFoundation(unittest.TestCase):
         url = "https://www.thesparksfoundationsingapore.org/"
         self.driver.get(url)
 
-    # # Test the Title of the website.
-    # def test_1_verify_title(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="home"]/div/div[1]/h1/a').click()
-    #     assert True
 
-    # # Test the Logo the website.
-    # def test_2_verify_logo(self):
-    #     self.driver.find_element(By.CLASS_NAME, 'navbar-brand')
-    #     assert True
-
-    # # Test the NavBar of the website.
-    # def test_3_verify_navbar(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="home"]/div/div[1]')
-    #     assert True
+    # Test the Title of the website.
+    def test_1_verify_title(self):
+        self.driver.find_element(By.XPATH, '//*[@id="home"]/div/div[1]/h1/a').click()
+        assert True
 
 
-    # # Test to Verify About Us page.
-    # def test_4_verify_AboutUs_page(self):
-    #     self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[1]/a').click()
-    #     time.sleep(2)
+    # Test the Logo the website.
+    def test_2_verify_logo(self):
+        self.driver.find_element(By.CLASS_NAME, 'navbar-brand')
+        assert True
 
-    #     elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[1]/ul')
 
-    #     # Collect all the elements present in the About Us drop down menu.
-    #     elm_list = []
-    #     for element in elements:
-    #         elm_list.append(element.text.split('\n'))
+    # Test the NavBar of the website.
+    def test_3_verify_navbar(self):
+        self.driver.find_element(By.XPATH, '//*[@id="home"]/div/div[1]')
+        assert True
 
-    #     elm_list = elm_list[0]
 
-    #     # Navigate through all the links present in the About Us drop down menu.
-    #     for elm in elm_list:
-    #         self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
-    #         time.sleep(3)
+    # Test to Verify About Us page.
+    def test_4_verify_AboutUs_page(self):
+        self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[1]/a').click()
+        time.sleep(2)
 
-    #         self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[1]/a').click()
-    #         time.sleep(2)
+        elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[1]/ul')
+
+        # Collect all the elements present in the About Us drop down menu.
+        elm_list = []
+        for element in elements:
+            elm_list.append(element.text.split('\n'))
+
+        elm_list = elm_list[0]
+
+        # Navigate through all the links present in the About Us drop down menu.
+        for elm in elm_list:
+            self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
+            time.sleep(3)
+
+            self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[1]/a').click()
+            time.sleep(2)
         
-    #     assert True
+        assert True
 
 
-    # # Test to verify Policies and Code page.
-    # def test_5_verify_Policies_and_Code_page(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/a').click()
-    #     time.sleep(2)
+    # Test to verify Policies and Code page.
+    def test_5_verify_Policies_and_Code_page(self):
+        self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/a').click()
+        time.sleep(2)
 
-    #     elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/ul')
+        elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/ul')
 
-    #     # Collect all the elements present in the Policies and Code drop down menu.
-    #     elm_list = []
-    #     for element in elements:
-    #         elm_list.append(element.text.split('\n'))
+        # Collect all the elements present in the Policies and Code drop down menu.
+        elm_list = []
+        for element in elements:
+            elm_list.append(element.text.split('\n'))
 
-    #     elm_list = elm_list[0]
+        elm_list = elm_list[0]
 
-    #     # Navigate through all the links present in the Policies and Code drop down menu.
-    #     for elm in elm_list:
-    #         self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
-    #         time.sleep(3)
+        # Navigate through all the links present in the Policies and Code drop down menu.
+        for elm in elm_list:
+            self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
+            time.sleep(3)
 
-    #         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/a').click()
-    #         time.sleep(2)
+            self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[2]/a').click()
+            time.sleep(2)
         
-    #     assert True
+        assert True
 
-    # # Test to verify Programs page.
-    # def test_6_verify_Programs_page(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/a').click()
-    #     time.sleep(2)
 
-    #     elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/ul')
+    # Test to verify Programs page.
+    def test_6_verify_Programs_page(self):
+        self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/a').click()
+        time.sleep(2)
 
-    #     # Collect all the elements present in the Programs drop down menu.
-    #     elm_list = []
-    #     for element in elements:
-    #         elm_list.append(element.text.split('\n'))
+        elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/ul')
 
-    #     elm_list = elm_list[0]
+        # Collect all the elements present in the Programs drop down menu.
+        elm_list = []
+        for element in elements:
+            elm_list.append(element.text.split('\n'))
 
-    #     # Navigate through all the links present in the Programs drop down menu.
-    #     for elm in elm_list:
-    #         self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
-    #         time.sleep(3)
+        elm_list = elm_list[0]
 
-    #         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/a').click()
-    #         time.sleep(2)
+        # Navigate through all the links present in the Programs drop down menu.
+        for elm in elm_list:
+            self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
+            time.sleep(3)
+
+            self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[3]/a').click()
+            time.sleep(2)
         
-    #     assert True
+        assert True
 
 
-    # # Test to verify Links page.
-    # def test_7_verify_Links_page(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/a').click()
-    #     time.sleep(2)
+    # Test to verify Links page.
+    def test_7_verify_Links_page(self):
+        self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/a').click()
+        time.sleep(2)
 
-    #     elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/ul')
+        elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/ul')
 
-    #     # Collect all the elements present in the Links drop down menu.
-    #     elm_list = []
-    #     for element in elements:
-    #         elm_list.append(element.text.split('\n'))
+        # Collect all the elements present in the Links drop down menu.
+        elm_list = []
+        for element in elements:
+            elm_list.append(element.text.split('\n'))
 
-    #     elm_list = elm_list[0]
+        elm_list = elm_list[0]
 
-    #     # Navigate through all the links present in the Links drop down menu.
-    #     for elm in elm_list:
-    #         self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
-    #         time.sleep(3)
+        # Navigate through all the links present in the Links drop down menu.
+        for elm in elm_list:
+            self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
+            time.sleep(3)
 
-    #         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/a').click()
-    #         time.sleep(2)
+            self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[4]/a').click()
+            time.sleep(2)
         
-    #     assert True
+        assert True
     
 
-    # # Test to verify Join Us page.
-    # def test_8_verify_JoinUs_page(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/a').click()
-    #     time.sleep(2)
+    # Test to verify Join Us page.
+    def test_8_verify_JoinUs_page(self):
+        self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/a').click()
+        time.sleep(2)
 
-    #     elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/ul')
+        elements = self.driver.find_elements(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/ul')
 
-    #     # Collect all the elements present in the Join Us drop down menu.
-    #     elm_list = []
-    #     for element in elements:
-    #         elm_list.append(element.text.split('\n'))
+        # Collect all the elements present in the Join Us drop down menu.
+        elm_list = []
+        for element in elements:
+            elm_list.append(element.text.split('\n'))
 
-    #     elm_list = elm_list[0]
+        elm_list = elm_list[0]
 
-    #     # Navigate through all the links present in the Join Us drop down menu.
-    #     for elm in elm_list:
-    #         self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
-    #         time.sleep(3)
+        # Navigate through all the links present in the Join Us drop down menu.
+        for elm in elm_list:
+            self.driver.find_element(By.LINK_TEXT, f'{elm}').click()
+            time.sleep(3)
 
-    #         self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/a').click()
-    #         time.sleep(2)
+            self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[5]/a').click()
+            time.sleep(2)
         
-    #     assert True
+        assert True
 
 
-    # # Test to verify Contact Us page.
-    # def test_9_verify_ContactUs_page(self):
-    #     self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[6]/a').click()
-    #     time.sleep(3)
+    # Test to verify Contact Us page.
+    def test_9_verify_ContactUs_page(self):
+        self.driver.find_element(By.XPATH, '//*[@id="link-effect-3"]/ul/li[6]/a').click()
+        time.sleep(3)
 
-    #     assert True
-
-
-    # # Test to verify Join Us Form Fillup.
-    # def test_10_Fill_JoinUs_Form(self):
-    #     self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[5]/a').click()
-    #     time.sleep(2)
-
-    #     self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[5]/ul/li[1]/a').click()
-    #     time.sleep(2)
-
-    #     # Window scroll down the web page to a specified height.
-    #     self.driver.execute_script("window.scrollTo(0, 800)")
-    #     time.sleep(3)
-
-    #     # Robot enter the details in the input form.
-    #     name = self.driver.find_element(By.NAME, 'Name')
-    #     name.send_keys("Akash Das")
-    #     time.sleep(2)
-
-    #     email_or_phone = self.driver.find_element(By.NAME, 'Email')
-    #     email_or_phone.send_keys("das88764@gmail.com")
-    #     time.sleep(2)
-
-    #     # Selects options from the drop down menu in the form.
-    #     option = Select(self.driver.find_element(By.CLASS_NAME, 'form-control'))
-    #     option.select_by_visible_text('Intern')
-    #     time.sleep(2)
-
-    #     self.driver.find_element(By.CLASS_NAME, 'button-w3layouts').click()
-    #     time.sleep(4)
-
-    #     assert True
+        assert True
 
 
-    # # Test the Know More button in the home page.
-    # def test_11_KnowMore_btn(self):
-    #     self.driver.execute_script("window.scrollTo(0, 450)")
-    #     time.sleep(2)
-    #     self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/a').click()
-    #     time.sleep(2)
+    # Test to verify Join Us Form Fillup.
+    def test_10_Fill_JoinUs_Form(self):
+        self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[5]/a').click()
+        time.sleep(2)
 
-    #     assert True
+        self.driver.find_element(By.XPATH,'//*[@id="link-effect-3"]/ul/li[5]/ul/li[1]/a').click()
+        time.sleep(2)
 
-    # # Test the Learn More button in the home page.
-    # def test_12_LearnMore_btn(self):
-    #     self.driver.execute_script("window.scrollTo(0, 1000)")
-    #     time.sleep(3)
-    #     self.driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/a').click()
-    #     time.sleep(2)
+        # Window scroll down the web page to a specified height.
+        self.driver.execute_script("window.scrollTo(0, 800)")
+        time.sleep(3)
 
-    #     assert True
+        # Robot enter the details in the input form.
+        name = self.driver.find_element(By.NAME, 'Name')
+        name.send_keys("Akash Das")
+        time.sleep(2)
 
-    # # Test the Visit Now button in the home page.
-    # def test_13_VisitNow_btn(self):
-    #     # Scroll down to the visit Now button in the home page.
-    #     self.driver.execute_script("window.scrollTo(0, 1500)")
-    #     time.sleep(3)
+        email_or_phone = self.driver.find_element(By.NAME, 'Email')
+        email_or_phone.send_keys("das88764@gmail.com")
+        time.sleep(2)
+
+        # Selects options from the drop down menu in the form.
+        option = Select(self.driver.find_element(By.CLASS_NAME, 'form-control'))
+        option.select_by_visible_text('Intern')
+        time.sleep(2)
+
+        self.driver.find_element(By.CLASS_NAME, 'button-w3layouts').click()
+        time.sleep(4)
+
+        assert True
+
+
+    # Test the Know More button in the home page.
+    def test_11_KnowMore_btn(self):
+        self.driver.execute_script("window.scrollTo(0, 450)")
+        time.sleep(2)
+
+        self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/a').click()
+        time.sleep(2)
+
+        assert True
+
+
+    # Test the Learn More button in the home page.
+    def test_12_LearnMore_btn(self):
+        self.driver.execute_script("window.scrollTo(0, 1000)")
+        time.sleep(3)
+
+        self.driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/a').click()
+        time.sleep(2)
+
+        assert True
+
+
+    # Test the Visit Now button in the home page.
+    def test_13_VisitNow_btn(self):
+
+        # Scroll down to the visit Now button in the home page.
+        self.driver.execute_script("window.scrollTo(0, 1500)")
+        time.sleep(3)
         
-    #     # Fetch the url from the visit now button.
-    #     visit_now_url = self.driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/a').get_attribute('href')
-    #     time.sleep(2)
+        # Fetch the url from the visit now button.
+        visit_now_url = self.driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/a').get_attribute('href')
+        time.sleep(2)
 
-    #     # Open a new tab
-    #     self.driver.execute_script("window.open('');")
+        # Open a new tab
+        self.driver.execute_script("window.open('');")
   
-    #     # Switch to the new tab and open the new URL
-    #     self.driver.switch_to.window(self.driver.window_handles[1])
-    #     self.driver.get(visit_now_url)
-    #     time.sleep(5)
+        # Switch to the new tab and open the new URL
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get(visit_now_url)
+        time.sleep(5)
 
-    #     # Close the new tab.
-    #     self.driver.close()
+        # Close the new tab.
+        self.driver.close()
 
-    #     # again switch to the main tab.
-    #     self.driver.switch_to.window(self.driver.window_handles[0])
-    #     time.sleep(2)
+        # again switch to the main tab.
+        self.driver.switch_to.window(self.driver.window_handles[0])
+        time.sleep(2)
 
-    #     assert True
+        assert True
 
 
-    # def test_14_Explore_btn(self):
-    #     # Scroll down the web page to a specified height.
-    #     self.driver.execute_script("window.scrollTo(0, 2000)")
-    #     time.sleep(2)
+    # Test all the Explore buttons in the home page.
+    def test_14_Explore_btn(self):
 
-    #     # Store the elements of the explore buttons.
-    #     items = self.driver.find_elements(By.CLASS_NAME, 'owl-item')
+        # Scroll down the web page to a specified height.
+        self.driver.execute_script("window.scrollTo(0, 2000)")
+        time.sleep(2)
 
-    #     # Loops through the Corporate partner's Explore buttons.
-    #     for item in items:
-    #         new_url = item.find_element(By.TAG_NAME, 'a').get_attribute('href')
+        # Store the elements of the explore buttons.
+        items = self.driver.find_elements(By.CLASS_NAME, 'owl-item')
 
-    #         # Open a new tab
-    #         self.driver.execute_script("window.open('');")
+        # Loops through the Corporate partner's Explore buttons.
+        for item in items:
+            new_url = item.find_element(By.TAG_NAME, 'a').get_attribute('href')
+
+            # Open a new tab
+            self.driver.execute_script("window.open('');")
     
-    #         # Switch to the new tab and open the new URL
-    #         self.driver.switch_to.window(self.driver.window_handles[1])
-    #         self.driver.get(new_url)
-    #         time.sleep(5)
+            # Switch to the new tab and open the new URL
+            self.driver.switch_to.window(self.driver.window_handles[1])
+            self.driver.get(new_url)
+            time.sleep(5)
 
-    #         # Close the new tab.
-    #         self.driver.close()
+            # Close the new tab.
+            self.driver.close()
 
-    #         # again switch to the main tab.
-    #         self.driver.switch_to.window(self.driver.window_handles[0])
-    #         time.sleep(2)
+            # again switch to the main tab.
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            time.sleep(2)
 
-    #     assert True    
+        assert True    
 
 
     # Test the Scroll to Top button.
