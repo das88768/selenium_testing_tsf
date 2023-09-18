@@ -208,10 +208,38 @@ class TheSparksFoundation(unittest.TestCase):
 
     #     assert True
 
-    def test_12_LearnMore_btn(self):
-        self.driver.execute_script("window.scrollTo(0, 1000)")
+    # # Test the Learn More button in the home page.
+    # def test_12_LearnMore_btn(self):
+    #     self.driver.execute_script("window.scrollTo(0, 1000)")
+    #     time.sleep(3)
+    #     self.driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/a').click()
+    #     time.sleep(2)
+
+    #     assert True
+
+    # Test the Visit Now button in the home page.
+    def test_13_VisitNow_btn(self):
+        # Scroll down to the visit Now button in the home page.
+        self.driver.execute_script("window.scrollTo(0, 1500)")
         time.sleep(3)
-        self.driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/a').click()
+        
+        # Fetch the url from the visit now button.
+        visit_now_url = self.driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/a').get_attribute('href')
+        time.sleep(2)
+
+        # Open a new tab
+        self.driver.execute_script("window.open('');")
+  
+        # Switch to the new tab and open the new URL
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get(visit_now_url)
+        time.sleep(5)
+
+        # Close the new tab.
+        self.driver.close()
+
+        # again switch to the main tab.
+        self.driver.switch_to.window(self.driver.window_handles[0])
         time.sleep(2)
 
         assert True
