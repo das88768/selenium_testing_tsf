@@ -1,5 +1,6 @@
 import unittest
 import time
+import HtmlTestRunner
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
@@ -300,4 +301,4 @@ class TheSparksFoundation(unittest.TestCase):
         print("Test Completed!")
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='Test_Report', report_title='The Sparks Foundation Test Report', report_name='the_sparks_foundation'))
