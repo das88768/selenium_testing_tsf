@@ -199,10 +199,19 @@ class TheSparksFoundation(unittest.TestCase):
     #     assert True
 
 
-    def test_11_KnowMore_btn(self):
-        self.driver.execute_script("window.scrollTo(0, 450)")
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/a').click()
+    # # Test the Know More button in the home page.
+    # def test_11_KnowMore_btn(self):
+    #     self.driver.execute_script("window.scrollTo(0, 450)")
+    #     time.sleep(2)
+    #     self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]/a').click()
+    #     time.sleep(2)
+
+    #     assert True
+
+    def test_12_LearnMore_btn(self):
+        self.driver.execute_script("window.scrollTo(0, 1000)")
+        time.sleep(3)
+        self.driver.find_element(By.XPATH, '/html/body/div[3]/div[2]/div/a').click()
         time.sleep(2)
 
         assert True
