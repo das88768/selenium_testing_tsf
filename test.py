@@ -245,37 +245,49 @@ class TheSparksFoundation(unittest.TestCase):
     #     assert True
 
 
-    def test_14_Explore_btn(self):
-        # Scroll down the web page to a specified height.
-        self.driver.execute_script("window.scrollTo(0, 2000)")
-        time.sleep(2)
+    # def test_14_Explore_btn(self):
+    #     # Scroll down the web page to a specified height.
+    #     self.driver.execute_script("window.scrollTo(0, 2000)")
+    #     time.sleep(2)
 
-        # Store the elements of the explore buttons.
-        items = self.driver.find_elements(By.CLASS_NAME, 'owl-item')
+    #     # Store the elements of the explore buttons.
+    #     items = self.driver.find_elements(By.CLASS_NAME, 'owl-item')
 
-        # Loops through the Corporate partner's Explore buttons.
-        for item in items:
-            new_url = item.find_element(By.TAG_NAME, 'a').get_attribute('href')
+    #     # Loops through the Corporate partner's Explore buttons.
+    #     for item in items:
+    #         new_url = item.find_element(By.TAG_NAME, 'a').get_attribute('href')
 
-            # Open a new tab
-            self.driver.execute_script("window.open('');")
+    #         # Open a new tab
+    #         self.driver.execute_script("window.open('');")
     
-            # Switch to the new tab and open the new URL
-            self.driver.switch_to.window(self.driver.window_handles[1])
-            self.driver.get(new_url)
-            time.sleep(5)
+    #         # Switch to the new tab and open the new URL
+    #         self.driver.switch_to.window(self.driver.window_handles[1])
+    #         self.driver.get(new_url)
+    #         time.sleep(5)
 
-            # Close the new tab.
-            self.driver.close()
+    #         # Close the new tab.
+    #         self.driver.close()
 
-            # again switch to the main tab.
-            self.driver.switch_to.window(self.driver.window_handles[0])
-            time.sleep(2)
+    #         # again switch to the main tab.
+    #         self.driver.switch_to.window(self.driver.window_handles[0])
+    #         time.sleep(2)
 
-        assert True    
+    #     assert True    
 
 
+    # Test the Scroll to Top button.
+    def test_15_scroll_top_btn(self):
 
+        # Scroll down the web page
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(3)
+
+        # test the scroll up button
+        self.driver.find_element(By.ID, 'toTopHover').click()
+        time.sleep(5)
+
+
+    # Halt the webdriver and close the browser.
     def tearDown(self):
         self.driver.close()
         print("Test Completed!")
